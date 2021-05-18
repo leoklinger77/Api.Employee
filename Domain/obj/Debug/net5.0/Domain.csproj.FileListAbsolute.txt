@@ -1,0 +1,5 @@
+C:\Users\Kling\Desktop\Project_Employee.Api\Project.Employee\Domain\obj\Debug\net5.0\Domain.csprojAssemblyReference.cache
+C:\Users\Kling\Desktop\Project_Employee.Api\Project.Employee\Domain\obj\Debug\net5.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kling\Desktop\Project_Employee.Api\Project.Employee\Domain\obj\Debug\net5.0\Domain.AssemblyInfoInputs.cache
+C:\Users\Kling\Desktop\Project_Employee.Api\Project.Employee\Domain\obj\Debug\net5.0\Domain.AssemblyInfo.cs
+C:\Users\Kling\Desktop\Project_Employee.Api\Project.Employee\Domain\obj\Debug\net5.0\Domain.csproj.CoreCompileInputs.cache
