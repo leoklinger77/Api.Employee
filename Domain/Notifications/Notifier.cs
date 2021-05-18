@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Domain.Notifications
 {
-    class Notifier : INotifier
+    public class Notifier : INotifier
     {
         private List<Notification> _notifications;
 

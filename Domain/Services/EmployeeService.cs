@@ -1,4 +1,5 @@
 ﻿using Domain.Interfaces;
+using Domain.Interfaces.Repository;
 using Domain.Models;
 using Domain.Models.Validation;
 using System.Linq;
@@ -7,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Domain.Services
 {
-    public class EmployeeServices : BaseService, IEmployeeService
+    public class EmployeeService : BaseService, IEmployeeService
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IAddressRepository _addressRepository;
         private readonly IEmailRepository _emailRepository;
         private readonly IPhoneRepository _phoneRepository;
-        public EmployeeServices(INotifier notifier, IEmployeeRepository employeeRepository, IAddressRepository addressRepository,
+        public EmployeeService(INotifier notifier, IEmployeeRepository employeeRepository, IAddressRepository addressRepository,
                                 IEmailRepository emailRepository, IPhoneRepository phoneRepository)
                                 : base(notifier)
         {
