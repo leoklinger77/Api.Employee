@@ -15,7 +15,6 @@ namespace Domain.Interfaces
         Task<bool> UpdatePhone(int employeeId, Phone phone);
         Task<bool> UpdateAddress(int employeeId, Address address);
 
-        Task<bool> Remove(int id);
-        
+        Task<bool> Remove(int id);        
     }
 }

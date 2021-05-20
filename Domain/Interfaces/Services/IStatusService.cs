@@ -8,6 +8,6 @@ namespace Domain.Interfaces.Services
     {
         Task<bool> Insert(Status status);
         Task<bool> Update(Status status);
-        Task Remove(int id);
+        Task<bool> Remove(int id);
     }
 }

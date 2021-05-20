@@ -7,6 +7,5 @@ namespace Infrastructure.Repository
     public class StatusRepository : Repository<Status>, IStatusRepository
     {
         public StatusRepository(DataContext context) : base(context) { }
-        
     }
 }

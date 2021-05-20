@@ -68,3 +68,5 @@ C:\Users\Kling\Desktop\Project_Employee.Api\Project.Employee\Api\bin\Debug\net5.
 C:\Users\Kling\Desktop\Project_Employee.Api\Project.Employee\Api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Kling\Desktop\Project_Employee.Api\Project.Employee\Api\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll
 C:\Users\Kling\Desktop\Project_Employee.Api\Project.Employee\Api\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
+C:\Users\Kling\Desktop\Project_Employee.Api\Project.Employee\Api\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\Kling\Desktop\Project_Employee.Api\Project.Employee\Api\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

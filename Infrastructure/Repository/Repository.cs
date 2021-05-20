@@ -12,8 +12,8 @@ namespace Infrastructure.Repository
 {
     public class Repository<T> : IRepository<T> where T : Entity, new()
     {
-        private readonly DataContext _context;
-        public readonly DbSet<T> DbSet;
+        protected readonly DataContext _context;
+        protected readonly DbSet<T> DbSet;
 
         public Repository(DataContext context)
         {

@@ -8,7 +8,7 @@ namespace Domain.Services
 {
     public abstract class BaseService
     {
-        protected readonly INotifier _notifier;
+        private readonly INotifier _notifier;
 
         protected BaseService(INotifier notifier)
         {

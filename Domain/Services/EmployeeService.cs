@@ -30,8 +30,8 @@ namespace Domain.Services
         }
         public async Task<bool> Insert(Employee employee)
         {
-            RunValidation(new EmployeeValidation(), employee);
-            RunValidation(new AddressValidation(), employee.Address);
+            if(!RunValidation(new EmployeeValidation(), employee)) return false;
+            if(!RunValidation(new AddressValidation(), employee.Address)) return false;
             if (employee.Emails.Count() >= 1)
             {
                 foreach (var email in employee.Emails)
@@ -42,10 +42,7 @@ namespace Domain.Services
             {
                 foreach (var phone in employee.Phones)
                     RunValidation(new PhoneValidation(), phone);
-            }
-
-            if (_notifier.HasNotification())
-                return false;
+            }           
 
             await _employeeRepository.Insert(employee);
             return true;
@@ -88,9 +85,10 @@ namespace Domain.Services
         }
         public async Task<bool> Update(Employee employee)
         {
-            RunValidation(new EmployeeValidation(), employee);
+            if(!RunValidation(new EmployeeValidation(), employee)) return false;
 
-            if (employee.Address != null) RunValidation(new AddressValidation(), employee.Address);
+            if (employee.Address != null) 
+                if(!RunValidation(new AddressValidation(), employee.Address)) return false;
 
             if (employee.Emails.Count() >= 1)
             {
@@ -104,8 +102,7 @@ namespace Domain.Services
                     RunValidation(new PhoneValidation(), phone);
             }
 
-            if (_notifier.HasNotification())
-                return false;
+            
 
             await _employeeRepository.Update(employee);
             return true;
