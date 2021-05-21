@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Project.Employee\\Infrastructure\\Infrastructure.csproj": {}
+    "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Api.Employee\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Project.Employee\\Domain\\Domain.csproj": {
+    "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Api.Employee\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Project.Employee\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Api.Employee\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Project.Employee\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Api.Employee\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Kling\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Project.Employee\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Api.Employee\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -67,14 +67,14 @@
         }
       }
     },
-    "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Project.Employee\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Api.Employee\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Project.Employee\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Api.Employee\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Project.Employee\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Api.Employee\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Kling\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Project.Employee\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Api.Employee\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -94,8 +94,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Project.Employee\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Project.Employee\\Domain\\Domain.csproj"
+              "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Api.Employee\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Api.Employee\\Domain\\Domain.csproj"
               }
             }
           }

@@ -6,9 +6,7 @@ using Domain.Interfaces.Repository;
 using Domain.Interfaces.Services;
 using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Api.V1.Controller
@@ -32,6 +30,7 @@ namespace Api.V1.Controller
         {
             return CustomResponse(_mapper.Map<List<StatusViewModel>>(await _statusRepository.FindAlls()));
         }
+
         [HttpGet("{id:int}")]
         public async Task<ActionResult> FindById(int id)
         {
@@ -45,14 +44,22 @@ namespace Api.V1.Controller
 
             return CustomResponse(rs);
         }
-        [HttpPost]
-        public async Task<ActionResult> Insert(StatusViewModel viewModel)
+
+        [HttpPost("{id:int}")]
+        public async Task<ActionResult> Insert(int id, StatusViewModel viewModel)
         {
+            if (id != viewModel.Id)
+            {
+                ErrorNotifier("Id informado não confere com o EmployeeId");
+                return CustomResponse();
+            }
+
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
             await _statusService.Insert(_mapper.Map<Status>(viewModel));
             return CustomResponse(viewModel);
         }
+
         [HttpPut]
         public async Task<ActionResult> Update(StatusViewModel viewModel)
         {
@@ -61,6 +68,7 @@ namespace Api.V1.Controller
             await _statusService.Update(_mapper.Map<Status>(viewModel));
             return CustomResponse(viewModel);
         }
+
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {            

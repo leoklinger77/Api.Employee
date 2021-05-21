@@ -10,3 +10,15 @@ C:\Users\Kling\Desktop\Project_Employee.Api\Project.Employee\Domain\bin\Debug\ne
 C:\Users\Kling\Desktop\Project_Employee.Api\Project.Employee\Domain\obj\Debug\net5.0\Domain.dll
 C:\Users\Kling\Desktop\Project_Employee.Api\Project.Employee\Domain\obj\Debug\net5.0\ref\Domain.dll
 C:\Users\Kling\Desktop\Project_Employee.Api\Project.Employee\Domain\obj\Debug\net5.0\Domain.pdb
+C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Domain\bin\Debug\net5.0\Domain.deps.json
+C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Domain\bin\Debug\net5.0\Domain.dll
+C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Domain\bin\Debug\net5.0\ref\Domain.dll
+C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Domain\bin\Debug\net5.0\Domain.pdb
+C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Domain\obj\Debug\net5.0\Domain.csprojAssemblyReference.cache
+C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Domain\obj\Debug\net5.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Domain\obj\Debug\net5.0\Domain.AssemblyInfoInputs.cache
+C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Domain\obj\Debug\net5.0\Domain.AssemblyInfo.cs
+C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Domain\obj\Debug\net5.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Domain\obj\Debug\net5.0\Domain.dll
+C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Domain\obj\Debug\net5.0\ref\Domain.dll
+C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Domain\obj\Debug\net5.0\Domain.pdb

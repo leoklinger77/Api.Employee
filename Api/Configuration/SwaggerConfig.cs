@@ -9,15 +9,15 @@ namespace Api.Configuration
     {
         public static IServiceCollection AddSwggerConfig(this IServiceCollection services)
         {
-            
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Api", Version = "v1" });
+            });
 
             return services;
         }
-        public static IApplicationBuilder UseSwaggerConfig(this IApplicationBuilder app, IApiVersionDescriptionProvider provider)
+        public static IApplicationBuilder UseSwaggerConfig(this IApplicationBuilder app)
         {
-
-            
-
             return app;
         }
     }

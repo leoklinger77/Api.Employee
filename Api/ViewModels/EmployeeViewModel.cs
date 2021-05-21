@@ -9,7 +9,8 @@ namespace Api.ViewModels
         public string Cpf { get; set; }
         public string Rg { get; set; }
         public DateTime BirthDate { get; set; }
-        public string PathImage { get; set; }
+        public string ImageUpload { get; set; }
+        public string PathImage { get; set; }        
         public JobRoleViewModel JobRole { get; set; }
         public int JobRoleId { get; set; }
         public IEnumerable<PhoneViewModel> Phones { get; set; } = new List<PhoneViewModel>();

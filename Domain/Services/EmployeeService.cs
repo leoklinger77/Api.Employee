@@ -3,7 +3,6 @@ using Domain.Interfaces.Repository;
 using Domain.Models;
 using Domain.Models.Validation;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace Domain.Services
@@ -19,7 +18,7 @@ namespace Domain.Services
         private readonly IJobRoleRepository _jobRoleRepository;
 
         public EmployeeService(INotifier notifier, IEmployeeRepository employeeRepository, IAddressRepository addressRepository,
-                                IEmailRepository emailRepository, IPhoneRepository phoneRepository, IStatusRepository statusRepository, 
+                                IEmailRepository emailRepository, IPhoneRepository phoneRepository, IStatusRepository statusRepository,
                                 ICityRepository cityRepository, IJobRoleRepository jobRoleRepository)
                                 : base(notifier)
         {
@@ -81,7 +80,6 @@ namespace Domain.Services
                 Notify("Cpf já cadastrado");
             }
 
-
             if (_notifier.HasNotification()) return false;
 
             employee.StatusId = 1004;
@@ -92,7 +90,7 @@ namespace Domain.Services
         }
         public async Task<bool> Remove(int id)
         {
-            var employee = await _employeeRepository.FindById(id);
+            var employee = await _employeeRepository.FindByIdInclude(id);
 
             if (employee == null)
             {
@@ -102,25 +100,24 @@ namespace Domain.Services
 
             if (employee.Emails.Count() >= 1)
             {
-                new Thread(() =>
+
+                foreach (var item in employee.Emails)
                 {
-                    foreach (var item in employee.Emails)
-                    {
-                        _emailRepository.Delete(item.Id);
-                    }
-                }).Start();
+                    await _emailRepository.Delete(item.Id);
+                }
+
             }
 
             if (employee.Phones.Count() >= 1)
             {
-                new Thread(() =>
+
+                foreach (var item in employee.Phones)
                 {
-                    foreach (var item in employee.Phones)
-                    {
-                        _phoneRepository.Delete(item.Id);
-                    }
-                }).Start();
+                    await _phoneRepository.Delete(item.Id);
+                }
             }
+
+            await _addressRepository.Delete(employee.Address.Id);
 
             await _employeeRepository.Delete(id);
             return true;

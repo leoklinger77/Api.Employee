@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PAX7XncZUkDmqe32hcU5IF1XhOZzrrVguXYbP6wSIxaFwhmgl55k01sWP54uPa3MXpktvCVjGe8e/lG2VOTGfg==",
+  "dgSpecHash": "Z+heKVhuNLl3TkKSLdiMFt/AF5MLYNlUYalKy/f+mDyM5Ifv72yYVSRsFUL5CrDwbCyfQpawMwAIT/TkSQWkRg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Project.Employee\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\Kling\\Desktop\\Project_Employee.Api\\Api.Employee\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kling\\.nuget\\packages\\fluentvalidation\\10.1.0\\fluentvalidation.10.1.0.nupkg.sha512",
     "C:\\Users\\Kling\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.1.0\\fluentvalidation.aspnetcore.10.1.0.nupkg.sha512",

@@ -16,9 +16,9 @@ namespace Api.Configuration
 
 
             CreateMap<AddressViewModel, Address>();
-            CreateMap<Address, AddressViewModel>();
-                //.ForMember(dest => dest.City, opt => opt.MapFrom(x=>x.City.Name))
-                //.ForMember(dest => dest.State, opt => opt.MapFrom(x => x.City.State.Name));
+            CreateMap<Address, AddressViewModel>()
+                .ForMember(dest => dest.City, opt => opt.MapFrom(x=>x.City.Name))
+                .ForMember(dest => dest.State, opt => opt.MapFrom(x => x.City.State.Name));
         }
     }
 }

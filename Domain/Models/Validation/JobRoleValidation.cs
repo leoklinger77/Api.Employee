@@ -10,7 +10,8 @@ namespace Domain.Models.Validation
                 .NotEmpty().WithMessage("O Campo {PropertyName} precisa ser fornecido")
                 .Length(2, 255).WithMessage("O campo {PropertyName} precisa ter entre {MinLength} e {MaxLength} caracteres");
             
-            RuleFor(c => c.Description)                
+            RuleFor(c => c.Description)
+                .NotEmpty().WithMessage("O Campo {PropertyName} precisa ser fornecido")
                 .Length(2, 255).WithMessage("O campo {PropertyName} precisa ter entre {MinLength} e {MaxLength} caracteres");
         }
     }

@@ -6,9 +6,7 @@ using Domain.Interfaces.Repository;
 using Domain.Interfaces.Services;
 using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Api.V1.Controller
@@ -39,6 +37,7 @@ namespace Api.V1.Controller
 
             return CustomResponse(_mapper.Map<JobRoleViewModel>(viewModel));
         }
+
         [HttpGet("{id:int}")]
         public async Task<ActionResult> FindById(int id)
         {
@@ -50,15 +49,22 @@ namespace Api.V1.Controller
             }
             return CustomResponse(_mapper.Map<JobRoleViewModel>(rs));
         }
-        [HttpPut]
-        public async Task<ActionResult> Update(JobRoleViewModel viewModel)
+
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult> Update(int id, JobRoleViewModel viewModel)
         {
+            if(id != viewModel.Id)
+            {
+                ErrorNotifier("Id informado não confere com o EmployeeId");
+                return CustomResponse();
+            }
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
             await _jobRoleService.Update(_mapper.Map<JobRole>(viewModel));
 
             return CustomResponse(viewModel);
         }
+
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
