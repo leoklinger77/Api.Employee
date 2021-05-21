@@ -11,9 +11,11 @@ namespace Api.ViewModels
         public DateTime BirthDate { get; set; }
         public string PathImage { get; set; }
         public JobRoleViewModel JobRole { get; set; }
+        public int JobRoleId { get; set; }
         public IEnumerable<PhoneViewModel> Phones { get; set; } = new List<PhoneViewModel>();
         public IEnumerable<EmailViewModel> Emails { get; set; } = new List<EmailViewModel>();
         public StatusViewModel Status { get; set; }
+        public int StatusId { get; set; }
         public AddressViewModel Address { get; set; }
     }
 }

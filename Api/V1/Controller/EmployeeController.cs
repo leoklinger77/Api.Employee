@@ -36,7 +36,7 @@ namespace Api.V1.Controller
 
             await _employeeService.Insert(_mapper.Map<Employee>(employee));
 
-            return CustomResponse();
+            return CustomResponse(employee);
         }
 
     }

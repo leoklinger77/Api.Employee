@@ -14,6 +14,7 @@ namespace Domain.Models.Validation
             RuleFor(c => c.Cpf)
                 .NotEmpty().WithMessage("O Campo {PropertyName} precisa ser fornecido")
                 .Length(11, 11).WithMessage("O campo {PropertyName} precisa ter entre {MinLength} e {MaxLength} caracteres");
+
             RuleFor(f => ValidationCpf.IsCpf(f.Cpf)).Equal(true)
                     .WithMessage("O Cpf fornecido é inválido.");
             

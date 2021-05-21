@@ -24,10 +24,13 @@ namespace Api.Configuration
             services.AddScoped<IAddressRepository, AddressRepository>();
             services.AddScoped<IEmailRepository, EmailRepository>();
             services.AddScoped<IPhoneRepository, PhoneRepository>();
+            services.AddScoped<ICityRepository, CityRepository>();
+            services.AddScoped<IJobRoleRepository, JobRoleRepository>();
 
 
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<IStatusService, StatusService>();
+            services.AddScoped<IJobRoleService, JobRoleService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
