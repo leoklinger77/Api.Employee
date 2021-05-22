@@ -1,14 +1,13 @@
 ﻿using Api.Controllers;
+using Api.Extension;
 using Api.ViewModels;
 using AutoMapper;
 using Domain.Interfaces;
 using Domain.Interfaces.Repository;
 using Domain.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -19,10 +18,12 @@ namespace Api.V1.Controller
     {
         private readonly IEmployeeService _employeeService;
         private readonly IEmployeeRepository _employeeRepository;
-        public EmployeeController(INotifier notifier, IMapper mapper, IEmployeeRepository employeeRepository, IEmployeeService employeeService) : base(notifier, mapper)
+        private readonly FileService _fileService;
+        public EmployeeController(INotifier notifier, IMapper mapper, IEmployeeRepository employeeRepository, IEmployeeService employeeService, FileService fileService) : base(notifier, mapper)
         {
             _employeeRepository = employeeRepository;
             _employeeService = employeeService;
+            _fileService = fileService;
         }
 
         [HttpGet]
@@ -54,7 +55,7 @@ namespace Api.V1.Controller
                 string imageName = Guid.NewGuid() + "";
                 new Thread(() =>
                 {
-                    UpdateFile(viewModel.ImageUpload, imageName);
+                    _fileService.UpdateFile(viewModel.ImageUpload, imageName);
                 }).Start();
                 viewModel.PathImage = imageName + viewModel.ImageUpload.FileName;
             }            
@@ -65,7 +66,7 @@ namespace Api.V1.Controller
             {
                 new Thread(() =>
                 {
-                    DeleteFile(viewModel.PathImage);
+                    _fileService.DeleteFile(viewModel.PathImage);
                 }).Start();
             }
 
@@ -102,36 +103,5 @@ namespace Api.V1.Controller
             return CustomResponse();
         }
 
-        private bool UpdateFile(IFormFile file, string imgName)
-        {
-            
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imagens", imgName + file.FileName);
-            if (System.IO.File.Exists(filePath))
-            {
-                ErrorNotifier("Já existe um arquivo com esse nome!");
-                return false;
-            }
-
-            new Thread(() => {
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    file.CopyToAsync(stream);
-                }
-            }).Start();
-
-            return true;
-        }
-        private void DeleteFile(string pathImage)
-        {
-            FileInfo fi = new FileInfo(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imagens", pathImage));
-            try
-            {
-                fi.Delete();
-            }
-            catch (IOException)
-            {
-                ErrorNotifier("Error ao excluir o arquivo enviado para o ServerFile.");
-            }
-        }
     }
 }

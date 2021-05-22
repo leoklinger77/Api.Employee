@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Api.Extension;
+using AutoMapper;
 using Domain.Interfaces;
 using Domain.Interfaces.Repository;
 using Domain.Interfaces.Services;
@@ -31,6 +32,8 @@ namespace Api.Configuration
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<IStatusService, StatusService>();
             services.AddScoped<IJobRoleService, JobRoleService>();
+            services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<FileService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
