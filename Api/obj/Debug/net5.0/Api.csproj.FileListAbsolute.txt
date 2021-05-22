@@ -142,3 +142,6 @@ C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Api\obj\Debug\net5.0\Ap
 C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Api\obj\Debug\net5.0\ref\Api.dll
 C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Api\obj\Debug\net5.0\Api.pdb
 C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Api\obj\Debug\net5.0\Api.genruntimeconfig.cache
+C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Api\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Api\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Kling\Desktop\Project_Employee.Api\Api.Employee\Api\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

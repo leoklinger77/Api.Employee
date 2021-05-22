@@ -4,6 +4,7 @@ using AutoMapper;
 using Domain.Interfaces;
 using Domain.Interfaces.Repository;
 using Domain.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -43,16 +44,20 @@ namespace Api.V1.Controller
         }
 
         [HttpPost]
+        [RequestSizeLimit(5000000)]
         public async Task<ActionResult> Insert(EmployeeViewModel viewModel)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            var imageName = Guid.NewGuid() + viewModel.PathImage + ".jpg";
-            if (!UpdateFile(viewModel.ImageUpload, imageName))
+            if (viewModel.ImageUpload != null && viewModel.ImageUpload.Length > 0)
             {
-                return CustomResponse();
-            }
-            viewModel.PathImage = imageName;
+                string imageName = Guid.NewGuid() + "";
+                new Thread(() =>
+                {
+                    UpdateFile(viewModel.ImageUpload, imageName);
+                }).Start();
+                viewModel.PathImage = imageName + viewModel.ImageUpload.FileName;
+            }            
 
             await _employeeService.Insert(_mapper.Map<Employee>(viewModel));
 
@@ -97,25 +102,23 @@ namespace Api.V1.Controller
             return CustomResponse();
         }
 
-        private bool UpdateFile(string file, string imgName)
+        private bool UpdateFile(IFormFile file, string imgName)
         {
-            if (string.IsNullOrEmpty(file))
-            {
-                ErrorNotifier("Forneça uma imagem para este produto!");
-                return false;
-            }
-            var imageDataByteArray = Convert.FromBase64String(file);
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imagens", imgName);
-
+            
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imagens", imgName + file.FileName);
             if (System.IO.File.Exists(filePath))
             {
                 ErrorNotifier("Já existe um arquivo com esse nome!");
                 return false;
             }
-            new Thread(() =>
-            {
-                System.IO.File.WriteAllBytes(filePath, imageDataByteArray);
+
+            new Thread(() => {
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    file.CopyToAsync(stream);
+                }
             }).Start();
+
             return true;
         }
         private void DeleteFile(string pathImage)
