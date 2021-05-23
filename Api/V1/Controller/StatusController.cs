@@ -5,12 +5,14 @@ using Domain.Interfaces;
 using Domain.Interfaces.Repository;
 using Domain.Interfaces.Services;
 using Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Api.V1.Controller
 {
+    [Authorize]
     [Route("api/v1/Status")]
     public class StatusController : MainController
     {

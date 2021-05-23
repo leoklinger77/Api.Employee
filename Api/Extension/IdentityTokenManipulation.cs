@@ -27,6 +27,21 @@ namespace Api.Extension
             _appSettings = appSettings.Value;
             _notifier = notifier;
         }
+        public async Task<bool> FirstAccess(string email, string password)
+        {
+            var result = await _signInManager.PasswordSignInAsync(email, password, false, true);
+            if (result.Succeeded)
+            {
+                return true;
+            }
+            else if (result.IsLockedOut)
+            {
+                _notifier.Handle(new Notification("Usuario temporariamente bloqueado por tentativas inválidas"));
+                return false;
+            }
+            _notifier.Handle(new Notification("Usuario ou enha incorretos"));
+            return false;
+        }
 
         public async Task<bool> RegisterAccount(RegisterUserViewModel registerUser)
         {
