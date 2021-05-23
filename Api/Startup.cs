@@ -18,12 +18,10 @@ namespace Api
                 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.WebApiConfig(Configuration);
-
             services.AddAutoMapper(typeof(Startup));
-            
+            services.WebApiConfig(Configuration);
+            services.AddIndentityConfiguration(Configuration);                        
             services.ResolveDependencies();
-
             services.AddSwggerConfig();
         }       
                 

@@ -33,11 +33,11 @@ namespace Api.Configuration
             services.AddScoped<IStatusService, StatusService>();
             services.AddScoped<IJobRoleService, JobRoleService>();
             services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<IPhoneService, PhoneService>();
             services.AddScoped<FileService>();
+            services.AddScoped<IdentityTokenManipulation>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
-
             return services;
         }
     }

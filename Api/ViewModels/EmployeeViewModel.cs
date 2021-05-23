@@ -14,7 +14,8 @@ namespace Api.ViewModels
         public string Rg { get; set; }
         public DateTime BirthDate { get; set; }
         public IFormFile ImageUpload { get; set; }
-        public string PathImage { get; set; }        
+        public string PathImage { get; set; }
+        public string Password { get; set; }
         public JobRoleViewModel JobRole { get; set; }
         public int JobRoleId { get; set; }
         public IEnumerable<PhoneViewModel> Phones { get; set; } = new List<PhoneViewModel>();
